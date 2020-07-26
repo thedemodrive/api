@@ -17,6 +17,8 @@ syntax = "proto3";
 // Keep this package for backward compatibility.
 package istio.v1.auth;
 
+import "google/protobuf/struct.proto";
+
 option go_package="istio.io/api/security/v1alpha1";
 
 // Certificate request message. The authentication should be based on:
@@ -32,6 +34,10 @@ message IstioCertificateRequest {
   string csr = 1;
   // Optional: requested certificate validity period, in seconds.
   int64 validity_duration = 3;
+
+  // $hide_from_docs
+  // Opaque metadata provided by the IstioAgent
+  google.protobuf.Struct metadata = 4;
 }
 
 // Certificate response message.
