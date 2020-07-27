@@ -35,7 +35,6 @@ message IstioCertificateRequest {
   // Optional: requested certificate validity period, in seconds.
   int64 validity_duration = 3;
 
-  // $hide_from_docs
   // Opaque metadata provided by the IstioAgent
   google.protobuf.Struct metadata = 4;
 }
